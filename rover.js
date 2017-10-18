@@ -23,6 +23,15 @@ function goForward(rover) {
       rover.position[1]--
       break;
   };
+  if (rover.position[0] >= 10) {
+    rover.position[0] = 0;
+  } else if (rover.position[0] < 0){
+    rover.position[0] = 9;
+  } else if (rover.position[1] >= 10) {
+    rover.position[1] = 0;
+  } else if (rover.position[1] < 0) {
+    rover.position[1] = 9;
+  }
 
   console.log("Going forward; New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]"+ rover.direction)
 }
@@ -45,6 +54,15 @@ function goBackward(rover) {
       rover.position[1]--
       break;
   };
+  if (rover.position[0] >= 10) {
+    rover.position[0] = 0;
+  } else if (rover.position[0] < 0){
+    rover.position[0] = 9;
+  } else if (rover.position[1] >= 10) {
+    rover.position[1] = 0;
+  } else if (rover.position[1] < 0) {
+    rover.position[1] = 9;
+  }
 
   console.log("Going backward; New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]"+ rover.direction);
 }
@@ -115,3 +133,16 @@ function commandMove(instructions) {
 
 commandMove("r");
 commandMove("f");
+
+// Function to make the grid spherical.
+function sphericalGrid(rover) {
+  if (rover.position[0] >= 10) {
+    rover.position[0] = 0;
+  } else if (rover.position[0] < 0){
+    rover.position[0] = 9;
+  } else if (rover.position[1] >= 10) {
+    rover.position[1] = 0;
+  } else if (rover.position[1] < 0) {
+    rover.position[1] = 9;
+  }
+}
